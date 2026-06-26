@@ -38,7 +38,7 @@ Follow these steps to run the project locally on your machine:
 
 ## 📄 License
 
-This project is open-source and licensed under the [MIT License](LICENSE).
+The source code for this website is licensed under the MIT License. You are free to use and modify the code.
 
-Feel free to use this website as a template for your own portfolio! If you do, a link back to this repository is highly appreciated: [emirgumus.dev on GitHub](https://github.com/emirgms-creator/emirgumus.dev).
+Copyright & Assets: All graphical assets, including but not limited to the "EG" monogram logo, Halt Core logo, banners, and personal branding images located in the project directories (e.g., /public or /src/assets), are strictly copyrighted by Emir Gümüş. All rights reserved. These specific brand assets may not be copied, reproduced, or used in other projects without explicit written permission.
 
