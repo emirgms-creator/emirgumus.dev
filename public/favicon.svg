@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <style>
+    .bg { fill: #000000; }
+    .fg { stroke: #ffffff; stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+    .fg-double { stroke: #ffffff; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #ffffff; }
+      .fg { stroke: #000000; }
+      .fg-double { stroke: #000000; }
+    }
+  </style>
+  <rect width="100%" height="100%" rx="100" class="bg" />
+  
+  <!-- Outer Double Circle Paths -->
+  <circle cx="250" cy="250" r="190" class="fg" />
+  <circle cx="250" cy="250" r="160" class="fg-double" opacity="0.8" />
+  
+  <!-- Monogram EG Structural Paths -->
+  <!-- Vertical stem of E -->
+  <path d="M 200 130 L 200 370" class="fg" stroke-width="16" />
+  
+  <!-- Horizontal bars of E -->
+  <path d="M 200 160 L 310 160" class="fg" />
+  <path d="M 200 250 L 270 250" class="fg" />
+  <path d="M 200 340 L 310 340" class="fg" />
+  
+  <!-- G curve and arrow-like return -->
+  <!-- The G starts from the middle-right, curves down, and returns inside -->
+  <path d="M 330 220 L 330 250 L 290 250" class="fg" stroke-width="15" />
+</svg>

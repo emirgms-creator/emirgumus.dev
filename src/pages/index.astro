@@ -1,0 +1,158 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import HaltCoreVisual from '../components/HaltCoreVisual.astro';
+import PresentellaVisual from '../components/PresentellaVisual.astro';
+---
+
+<Layout title="Developer Studio">
+  <!-- Immersive Hero Section (100vh) -->
+  <section class="relative h-screen w-full flex items-center justify-center bg-black overflow-hidden select-none">
+    <!-- Centerpiece Banner Image Frame -->
+    <div class="relative w-full max-w-5xl h-[80vh] flex items-center justify-center overflow-hidden px-6">
+      <img 
+        src="/emir_gumus_banner.jpg" 
+        alt="Emir Gümüş Banner" 
+        id="hero-banner"
+        class="max-w-full max-h-full object-contain parallax-image scale-[1.0]"
+      />
+    </div>
+
+    <!-- Bouncing White Arrow Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center cursor-pointer select-none animate-bounce" id="scroll-down-trigger">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 opacity-60 hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">
+        <polyline points="7 13 12 18 17 13"></polyline>
+        <polyline points="7 6 12 11 17 6"></polyline>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Featured Projects Showcase (Asymmetrical Z-Pattern) -->
+  <section class="border-b border-zinc-900 bg-black py-32 px-6 sm:px-12" id="projects">
+    <div class="mx-auto max-w-6xl space-y-48 featured-projects-container">
+      
+      <!-- Project 1: Halt Core (Left Aligned, Visual Left, Content Right) -->
+      <div class="mr-auto max-w-4xl w-full">
+        <div class="featured-card group transition-all duration-300">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+            <!-- Visual Left -->
+            <div class="lg:col-span-5 overflow-hidden visual-scale-wrapper reveal-item">
+              <HaltCoreVisual />
+            </div>
+            
+            <!-- Content Right -->
+            <div class="lg:col-span-7 space-y-6 reveal-item reveal-delay-200">
+              <h3 class="font-mono text-2xl font-bold tracking-tight text-white uppercase group-hover:text-white transition-colors">Halt Core</h3>
+              
+              <p class="text-xs sm:text-sm leading-relaxed text-zinc-400 font-sans">
+                The zero-trust execution guardrail for autonomous AI. Instantly intercepts and blocks destructive OS-level commands and malicious Python payloads. Fully local, air-gapped, and strictly execution-based. The ultimate emergency brake for your agents.
+              </p>
+              
+              <div class="pt-2">
+                <a 
+                  href="https://github.com/emirgms-creator/halt-core" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-flex items-center justify-center rounded-none border border-zinc-800 bg-black hover:border-zinc-500 hover:text-white px-6 py-2.5 font-mono text-xs font-semibold text-zinc-400 transition-colors duration-200 cursor-pointer"
+                >
+                  GitHub &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Presentella (Right Aligned, Content Left, Visual Right) -->
+      <div class="ml-auto max-w-4xl w-full">
+        <div class="featured-card group transition-all duration-300">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+            <!-- Content Left (Order 2 on mobile, Order 1 on desktop) -->
+            <div class="lg:col-span-7 space-y-6 order-2 lg:order-1 reveal-item">
+              <h3 class="font-mono text-2xl font-bold tracking-tight text-white uppercase group-hover:text-white transition-colors">Presentella</h3>
+              
+              <p class="text-xs sm:text-sm leading-relaxed text-zinc-400 font-sans">
+                The presentation architecture built exclusively for modern educators. Engineered to transform traditional lessons into high-impact interactive experiences. It empowers teachers with seamless storytelling tools designed for maximum student engagement and scalable classroom growth.
+              </p>
+              
+              <div class="pt-2">
+                <a 
+                  href="https://www.presentella.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-flex items-center justify-center rounded-none border border-zinc-800 bg-black hover:border-zinc-500 hover:text-white px-6 py-2.5 font-mono text-xs font-semibold text-zinc-400 transition-colors duration-200 cursor-pointer"
+                >
+                  Website &rarr;
+                </a>
+              </div>
+            </div>
+            
+            <!-- Visual Right (Order 1 on mobile, Order 2 on desktop) -->
+            <div class="lg:col-span-5 overflow-hidden visual-scale-wrapper order-1 lg:order-2 reveal-item reveal-delay-200">
+              <PresentellaVisual />
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script>
+  // Parallax Zoom effect for Hero Banner
+  const banner = document.getElementById('hero-banner');
+  if (banner) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollPos = window.scrollY;
+          const maxScroll = window.innerHeight;
+          const factor = Math.min(scrollPos / maxScroll, 1);
+          // Scale from 1.0 up to 1.25 (slow zoom-in) and translate downwards slightly
+          const scale = 1.0 + (factor * 0.25);
+          const translate = factor * 40;
+          banner.style.transform = `scale(${scale}) translateY(${translate}px)`;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+
+  // Scroll Reveal Observer
+  const revealItems = document.querySelectorAll('.reveal-item');
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -10% 0px', // triggers slightly before entering full view
+    threshold: 0.05
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  revealItems.forEach(item => {
+    observer.observe(item);
+  });
+
+  // Scroll Down trigger click handler
+  const scrollDownTrigger = document.getElementById('scroll-down-trigger');
+  if (scrollDownTrigger) {
+    scrollDownTrigger.addEventListener('click', () => {
+      const projectsSection = document.getElementById('projects');
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+</script>
+

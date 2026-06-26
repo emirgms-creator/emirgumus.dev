@@ -1,0 +1,73 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  tags: string[];
+  repoUrl?: string;
+  liveUrl?: string;
+  category: string;
+  status: 'Active' | 'Production' | 'Maintenance' | 'Archived';
+}
+
+const { title, description, tags, repoUrl, liveUrl, category, status } = Astro.props;
+---
+
+<div class="flex flex-col justify-between rounded-none border border-zinc-900 bg-black p-6 transition-colors duration-300 hover:border-zinc-700">
+  <div>
+    <!-- Category & Status -->
+    <div class="flex items-center justify-between mb-4">
+      <span class="font-mono text-[9px] tracking-wider text-zinc-500 uppercase">
+        {category}
+      </span>
+      <span class="font-mono text-[9px] tracking-wider text-zinc-400 border border-zinc-800 px-1.5 py-0.5 uppercase">
+        {status}
+      </span>
+    </div>
+
+    <!-- Title -->
+    <h3 class="font-mono text-base font-bold tracking-tight text-white mb-2">
+      {title}
+    </h3>
+
+    <!-- Description -->
+    <p class="text-xs leading-relaxed text-zinc-400 mb-6">
+      {description}
+    </p>
+  </div>
+
+  <div>
+    <!-- Tags -->
+    <div class="flex flex-wrap gap-1.5 mb-6">
+      {tags.map((tag) => (
+        <span class="border border-zinc-900 px-2 py-0.5 font-mono text-[9px] text-zinc-500">
+          {tag}
+        </span>
+      ))}
+    </div>
+
+    <!-- Actions -->
+    <div class="flex items-center gap-4 pt-4 border-t border-zinc-900">
+      {repoUrl && (
+        <a 
+          href={repoUrl} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-flex items-center gap-1 font-mono text-[10px] text-zinc-400 hover:text-white transition-colors duration-200"
+        >
+          Source &rarr;
+        </a>
+      )}
+      
+      {liveUrl && (
+        <a 
+          href={liveUrl} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-flex items-center gap-1 font-mono text-[10px] text-zinc-400 hover:text-white transition-colors duration-200"
+        >
+          Live &rarr;
+        </a>
+      )}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { 
+  title, 
+  description = "Emir Gümüş - Developer Studio. Autonomous security, zero-trust middleware, and high-performance AI tools." 
+} = Astro.props;
+
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon updated to emir_gumus.png -->
+    <link rel="icon" type="image/png" href="/emir_gumus.png" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Primary Meta Tags -->
+    <title>Emir Gümüş</title>
+    <meta name="title" content="Emir Gümüş" />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Emir Gümüş" />
+    <meta property="og:description" content={description} />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Emir Gümüş" />
+    <meta property="twitter:description" content={description} />
+
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body class="relative min-h-screen bg-black text-white selection:bg-white selection:text-black antialiased">
+    <!-- Main Content Container -->
+    <div class="relative flex flex-col min-h-screen">
+      <slot />
+    </div>
+  </body>
+</html>
