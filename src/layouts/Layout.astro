@@ -9,11 +9,13 @@ const {
   description = "Emir Gümüş - Developer Studio. Autonomous security, zero-trust middleware, and high-performance AI tools." 
 } = Astro.props;
 
+const displayTitle = title ? `${title} | Emir Gümüş` : "Emir Gümüş | Developer Studio";
+
 import '../styles/global.css';
 ---
 
 <!doctype html>
-<html lang="tr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,19 +24,30 @@ import '../styles/global.css';
     <meta name="generator" content={Astro.generator} />
     
     <!-- Primary Meta Tags -->
-    <title>Emir Gümüş</title>
-    <meta name="title" content="Emir Gümüş" />
+    <title>{displayTitle}</title>
+    <meta name="title" content={displayTitle} />
     <meta name="description" content={description} />
+    <meta name="keywords" content="Emir Gümüş, portfolio, developer, autonomous security, zero-trust middleware, AI tools, Halt Core, Presentella, software engineer" />
+    <meta name="author" content="Emir Gümüş" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={Astro.url} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Emir Gümüş" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={displayTitle} />
     <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL("/emir_gumus_banner.jpg", Astro.url)} />
+    <meta property="og:site_name" content="Emir Gümüş Portfolio" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Emir Gümüş" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={displayTitle} />
     <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL("/emir_gumus_banner.jpg", Astro.url)} />
 
     <!-- Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -47,3 +60,4 @@ import '../styles/global.css';
     </div>
   </body>
 </html>
+
