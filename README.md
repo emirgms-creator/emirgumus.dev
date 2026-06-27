@@ -2,7 +2,7 @@
   <img src="./logo.svg" alt="emirgumus.dev logo" width="150" />
 </p>
 
-# 🌌 emirgumus.dev
+<h1 align="center">emirgumus.dev</h1>
 
 The personal portfolio website of Emir Gümüş. A modern web platform designed to showcase my projects, share my experiences, and connect with others.
 
