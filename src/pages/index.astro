@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import HaltCoreVisual from '../components/HaltCoreVisual.astro';
+import ParseCoreVisual from '../components/ParseCoreVisual.astro';
 import PresentellaVisual from '../components/PresentellaVisual.astro';
 ---
 
@@ -45,7 +46,7 @@ import PresentellaVisual from '../components/PresentellaVisual.astro';
               <h3 class="font-mono text-2xl font-bold tracking-tight text-white uppercase group-hover:text-white transition-colors">Halt Core</h3>
               
               <p class="text-xs sm:text-sm leading-relaxed text-zinc-400 font-sans">
-                The zero-trust execution guardrail for autonomous AI. Instantly intercepts and blocks destructive OS-level commands and malicious Python payloads. Fully local, air-gapped, and strictly execution-based. The ultimate emergency brake for your agents.
+                Zero-trust execution guardrail and sub-millisecond middleware SDK for autonomous AI agents. Intercepts and blocks dangerous shell commands, Python AST sandbox escapes, and malicious file payloads before execution. Powered by local rules and optional Phi-4 intent validation. Local, private, and air-gapped.
               </p>
               
               <div class="pt-2">
@@ -63,16 +64,53 @@ import PresentellaVisual from '../components/PresentellaVisual.astro';
         </div>
       </div>
 
-      <!-- Project 2: Presentella (Right Aligned, Content Left, Visual Right) -->
+      <!-- Project 2: Parse Core (Right Aligned, Content Left, Visual Right) -->
       <div class="ml-auto max-w-4xl w-full">
         <div class="featured-card group transition-all duration-300">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
             <!-- Content Left (Order 2 on mobile, Order 1 on desktop) -->
             <div class="lg:col-span-7 space-y-6 order-2 lg:order-1 reveal-item">
+              <h3 class="font-mono text-2xl font-bold tracking-tight text-white uppercase group-hover:text-white transition-colors">Parse Core</h3>
+              
+              <p class="text-xs sm:text-sm leading-relaxed text-zinc-400 font-sans">
+                Ultra-fast, privacy-first local data ingestion pipeline in Go. Extracts text from PDF, DOCX, CSV, TXT & MD, chunks it semantically with sliding overlap, and structures it into JSON using local LLMs (Ollama/Phi-4). Safe, CGO-free, and 100% air-gapped.
+              </p>
+              
+              <div class="pt-2">
+                <a 
+                  href="https://github.com/emirgms-creator/parse-core" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-flex items-center justify-center rounded-none border border-zinc-800 bg-black hover:border-zinc-500 hover:text-white px-6 py-2.5 font-mono text-xs font-semibold text-zinc-400 transition-colors duration-200 cursor-pointer"
+                >
+                  GitHub &rarr;
+                </a>
+              </div>
+            </div>
+            
+            <!-- Visual Right (Order 1 on mobile, Order 2 on desktop) -->
+            <div class="lg:col-span-5 overflow-hidden visual-scale-wrapper order-1 lg:order-2 reveal-item reveal-delay-200">
+              <ParseCoreVisual />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Presentella (Left Aligned, Visual Left, Content Right) -->
+      <div class="mr-auto max-w-4xl w-full">
+        <div class="featured-card group transition-all duration-300">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+            <!-- Visual Left -->
+            <div class="lg:col-span-5 overflow-hidden visual-scale-wrapper reveal-item">
+              <PresentellaVisual />
+            </div>
+            
+            <!-- Content Right -->
+            <div class="lg:col-span-7 space-y-6 reveal-item reveal-delay-200">
               <h3 class="font-mono text-2xl font-bold tracking-tight text-white uppercase group-hover:text-white transition-colors">Presentella</h3>
               
               <p class="text-xs sm:text-sm leading-relaxed text-zinc-400 font-sans">
-                The presentation architecture built exclusively for modern educators. Engineered to transform traditional lessons into high-impact interactive experiences. It empowers teachers with seamless storytelling tools designed for maximum student engagement and scalable classroom growth.
+                Presentella turns any academic topic into structured, age-appropriate lesson decks and quizzes in seconds. Tailored to specific grade levels from middle school to university, it automatically generates curriculum-aligned content and custom visuals for a complete learning experience.
               </p>
               
               <div class="pt-2">
@@ -85,11 +123,6 @@ import PresentellaVisual from '../components/PresentellaVisual.astro';
                   Website &rarr;
                 </a>
               </div>
-            </div>
-            
-            <!-- Visual Right (Order 1 on mobile, Order 2 on desktop) -->
-            <div class="lg:col-span-5 overflow-hidden visual-scale-wrapper order-1 lg:order-2 reveal-item reveal-delay-200">
-              <PresentellaVisual />
             </div>
           </div>
         </div>

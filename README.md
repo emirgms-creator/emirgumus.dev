@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./logo.svg" alt="emirgumus.dev logo" width="150" />
+</p>
+
 # 🌌 emirgumus.dev
 
 The personal portfolio website of Emir Gümüş. A modern web platform designed to showcase my projects, share my experiences, and connect with others.
@@ -40,5 +44,5 @@ Follow these steps to run the project locally on your machine:
 
 The source code for this website is licensed under the MIT License. You are free to use and modify the code.
 
-Copyright & Assets: All graphical assets, including but not limited to the "EG" monogram logo, Halt Core logo, banners, and personal branding images located in the project directories (e.g., /public or /src/assets), are strictly copyrighted by Emir Gümüş. All rights reserved. These specific brand assets may not be copied, reproduced, or used in other projects without explicit written permission.
+Copyright & Assets: All graphical assets, including but not limited to the "EG" monogram logo, Halt Core logo, Parse Core logo, Presentella logo, banners, and personal branding images located in the project directories (e.g., /public or /src/assets), are strictly copyrighted by Emir Gümüş. All rights reserved. These specific brand assets may not be copied, reproduced, or used in other projects without explicit written permission.
 
